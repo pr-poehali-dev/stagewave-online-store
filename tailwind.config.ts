@@ -18,7 +18,19 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				orbitron: ['Orbitron', 'sans-serif'],
+				roboto: ['Roboto', 'sans-serif']
+			},
 			colors: {
+				// Gaming RGB colors
+				gaming: {
+					pink: '#FF0080',
+					cyan: '#00FFFF',
+					purple: '#8B5CF6',
+					black: '#000000',
+					gray: '#1A1A1A'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +96,27 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'rgb-glow': {
+					'0%': { boxShadow: '0 0 20px #FF0080, 0 0 40px #FF0080' },
+					'50%': { boxShadow: '0 0 20px #00FFFF, 0 0 40px #00FFFF' },
+					'100%': { boxShadow: '0 0 20px #8B5CF6, 0 0 40px #8B5CF6' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-gaming': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'rgb-glow': 'rgb-glow 2s ease-in-out infinite alternate',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-gaming': 'pulse-gaming 1.5s ease-in-out infinite'
 			}
 		}
 	},
